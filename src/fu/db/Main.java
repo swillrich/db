@@ -19,9 +19,9 @@ public class Main {
 		Statement st = null;
 		ResultSet rs = null;
 
-		String url = "jdbc:postgresql://localhost:5431/db";
+		String url = "jdbc:postgresql://localhost:5431/fu";
 		String user = "fu";
-		String password = "fu";
+		String password = "";
 
 		try {
 			con = DriverManager.getConnection(url, user, password);
