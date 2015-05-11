@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 
 public class DBStarter {
 
-	private static final String START_COMMAND = "cmd /c "
-			+ DBProperties.INSTANCE.getProperty("postgresql")
-			+ "\\bin\\pg_ctl.exe" + " -D db_data start";
+	private static final String START_COMMAND = "cmd /c " + "\""
+			+ System.getenv().get("POSTGRESQL_HOME") + "\"\\bin\\pg_ctl.exe"
+			+ " -D db_data start";
 
 	public static void main(String[] args) {
 		try {
@@ -55,6 +55,7 @@ public class DBStarter {
 
 				@Override
 				public void run() {
+					System.out.println("execute: " + command);
 					Process exec;
 					try {
 						exec = Runtime.getRuntime().exec(command);
