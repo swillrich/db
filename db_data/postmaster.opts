@@ -1,1 +1,1 @@
-c:/Program Files/PostgreSQL/9.4/bin/postgres.exe "-D" "c:/workspace/DB/db_data/"
+C:/Program Files/PostgreSQL/9.4/bin/postgres.exe "-D" "C:\Users\msandner\git\db\db_data"
