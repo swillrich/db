@@ -8,6 +8,10 @@ import java.sql.Statement;
 import fu.db.Log;
 import fu.db.inputres.DBProperties;
 
+/**
+ * @author swi
+ *	
+ */
 public class DBConnection {
 
 	private static DBConnection INSTANCE = new DBConnection();
