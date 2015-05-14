@@ -1,4 +1,4 @@
-package fu.db.readin;
+package fu.db.inputres.csv;
 
 import java.io.BufferedReader;
 import java.io.File;

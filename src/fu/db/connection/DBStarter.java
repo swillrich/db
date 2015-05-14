@@ -1,9 +1,11 @@
-package fu.db;
+package fu.db.connection;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import fu.db.Log;
 
 public class DBStarter {
 
@@ -15,7 +17,7 @@ public class DBStarter {
 		try {
 			start();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Log.error(e);
 		}
 	}
 
@@ -30,21 +32,18 @@ public class DBStarter {
 
 	private static void waitForUserInput() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out
-				.println("--> enter 'close' and press enter for closing PostgreSQL server instance");
+		Log.info("--> enter 'close' and press enter for closing PostgreSQL server instance");
 		while (true) {
 			try {
 				String line = br.readLine();
 				if (line.equals("close")) {
-					System.out
-							.println("close enteres, server instance is shutting down");
+					Log.info("close entered, server instance is shutting down");
 					break;
 				} else {
-					System.out
-							.println("invalid command, try it again! enter 'close' for shutting down server instance");
+					Log.info("invalid command, try it again! enter 'close' for shutting down server instance");
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				Log.error(e);
 			}
 		}
 	}
@@ -55,7 +54,7 @@ public class DBStarter {
 
 				@Override
 				public void run() {
-					System.out.println("execute: " + command);
+					Log.info("execute: " + command);
 					Process exec;
 					try {
 						exec = Runtime.getRuntime().exec(command);
@@ -65,7 +64,7 @@ public class DBStarter {
 							System.out.print((char) i);
 						}
 					} catch (IOException e) {
-						e.printStackTrace();
+						Log.error(e);
 					}
 				}
 			});

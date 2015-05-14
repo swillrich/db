@@ -1,18 +1,27 @@
-package fu.db;
+package fu.db.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import fu.db.Log;
+import fu.db.inputres.DBProperties;
+
 public class DBConnection {
 
 	private static DBConnection INSTANCE = new DBConnection();
 
+	private Connection connection;
+
+	public Connection getConnection() {
+		return connection;
+	}
+
 	public static DBConnection getINSTANCE() {
 		return INSTANCE;
 	}
-	
+
 	public Statement getNewStat() {
 		try {
 			return this.connection.createStatement();
@@ -22,13 +31,11 @@ public class DBConnection {
 		return null;
 	}
 
-	private Connection connection;
-
 	private DBConnection() {
 		try {
 			initializeConnection();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Log.error(e);
 		}
 	}
 

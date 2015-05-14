@@ -1,4 +1,4 @@
-package fu.db;
+package fu.db.inputres;
 
 import java.io.File;
 import java.io.FileInputStream;

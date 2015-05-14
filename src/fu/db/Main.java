@@ -1,8 +1,11 @@
 package fu.db;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+
+import fu.db.connection.DBConnection;
+import fu.db.sql.SQLFileExecuter;
 
 public class Main {
 	public static void main(String[] args) {
@@ -10,18 +13,14 @@ public class Main {
 	}
 
 	public Main() {
+		Connection connection = DBConnection.getINSTANCE().getConnection();
+
+		SQLFileExecuter sqlFileExecuter = new SQLFileExecuter(connection);
+		sqlFileExecuter.dropSchema();
 		try {
-			Statement st = DBConnection.getINSTANCE().getNewStat();
-			ResultSet rs = st.executeQuery("SELECT * FROM member");
-
-			while (rs.next()) {
-				String name = rs.getString(1).trim();
-				String nick = rs.getString(2).trim();
-				System.out.println("name: " + name + ", nick: " + nick);
-			}
-
-		} catch (SQLException ex) {
-			ex.printStackTrace();
+			sqlFileExecuter.executeSQLFile(new File("res/filmdb.sql"));
+		} catch (IOException e) {
+			Log.error(e);
 		}
 	}
 }

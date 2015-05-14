@@ -1,4 +1,4 @@
-package fu.db.readin;
+package fu.db.inputres.csv;
 
 import java.util.ArrayList;
 import java.util.Arrays;
