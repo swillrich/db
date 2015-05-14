@@ -7,6 +7,11 @@ import java.sql.Connection;
 import fu.db.connection.DBConnection;
 import fu.db.sql.SQLFileExecuter;
 
+/**
+ * @author Sven Willrich
+ *
+ *         This class is the starting point
+ */
 public class Main {
 	public static void main(String[] args) {
 		new Main();

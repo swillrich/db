@@ -3,6 +3,12 @@ package fu.db.inputres.csv;
 import java.util.ArrayList;
 import java.util.Formatter;
 
+/**
+ * @author Sven Willrich
+ *
+ *         This class is an own or custom structure to save one CSV line. Put
+ *         differently, this class represents one CSV line.
+ */
 public class CSVRowList extends ArrayList<String> {
 
 	private static final int MAX_LENGTH = 15;

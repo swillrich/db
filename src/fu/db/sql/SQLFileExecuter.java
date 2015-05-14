@@ -9,13 +9,25 @@ import java.sql.SQLException;
 
 import fu.db.Log;
 
+/**
+ * @author Sven Willrich
+ *
+ *         This class is used to (i) drop the schema and (ii) execute SQL
+ *         statements given by an external file line by line.
+ */
 public class SQLFileExecuter {
+	/**
+	 * Holds the database connection
+	 */
 	private Connection connection;
 
 	public SQLFileExecuter(Connection connection) {
 		this.connection = connection;
 	}
 
+	/**
+	 * This methods drops the schema which is given by the database connection
+	 */
 	public void dropSchema() {
 		try {
 			String url = connection.getMetaData().getURL();
@@ -29,6 +41,14 @@ public class SQLFileExecuter {
 		}
 	}
 
+	/**
+	 * This method works off command by command all given SQL statements. For
+	 * each SQL statement a separate update statement will be generate.
+	 * 
+	 * @param file
+	 *            The file which consists of SQL statements
+	 * @throws IOException
+	 */
 	public void executeSQLFile(File file) throws IOException {
 		FileReader fileReader = new FileReader(file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);

@@ -9,11 +9,17 @@ import fu.db.Log;
 import fu.db.inputres.DBProperties;
 
 /**
- * @author swi
- *	
+ * @author Sven Willrich
+ * 
+ *         This class is used to maintain the database connection and is
+ *         competed to return Statements for example.
  */
 public class DBConnection {
 
+	/**
+	 * This class is built as singleton, so this variable is provided for
+	 * holding the object reference
+	 */
 	private static DBConnection INSTANCE = new DBConnection();
 
 	private Connection connection;
@@ -26,6 +32,12 @@ public class DBConnection {
 		return INSTANCE;
 	}
 
+	/**
+	 * Returns a new instantiated statement object for update and selection
+	 * statements
+	 * 
+	 * @return the new generated statement
+	 */
 	public Statement getNewStat() {
 		try {
 			return this.connection.createStatement();

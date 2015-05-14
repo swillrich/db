@@ -7,12 +7,28 @@ import java.io.InputStreamReader;
 
 import fu.db.Log;
 
+/**
+ * @author Sven Willrich
+ *
+ *         The task for this class is to start and to shut down the PostgreSQL
+ *         server. Precondition to work properly is to set the environment
+ *         variable correctly. Just start the server via the provided Main
+ *         method and enter the "close" command to shut down him.
+ */
 public class DBStarter {
 
+	/**
+	 * This variable provides the command to start the server upon condition
+	 * that the environment variable is setted properly and the PostgreSQL root
+	 * directory could be found
+	 */
 	private static final String START_COMMAND = "cmd /c " + "\""
 			+ System.getenv().get("POSTGRESQL_HOME") + "\"\\bin\\pg_ctl.exe"
 			+ " -D db_data start";
 
+	/**
+	 * Use this method to start the PostgreSQL server
+	 */
 	public static void main(String[] args) {
 		try {
 			start();
@@ -21,6 +37,17 @@ public class DBStarter {
 		}
 	}
 
+	/**
+	 * This method is used to start the server and is devided into three parts
+	 * 
+	 * 1. start server
+	 * 
+	 * 2. wait for user close command "close"
+	 * 
+	 * 3. shut down server
+	 * 
+	 * @throws InterruptedException
+	 */
 	public static void start() throws InterruptedException {
 
 		new CMDThread(START_COMMAND).start();
@@ -48,7 +75,7 @@ public class DBStarter {
 		}
 	}
 
-	public static class CMDThread extends Thread {
+	private static class CMDThread extends Thread {
 		public CMDThread(final String command) {
 			super(new Runnable() {
 
