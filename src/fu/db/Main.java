@@ -23,7 +23,7 @@ public class Main {
 		SQLFileExecuter sqlFileExecuter = new SQLFileExecuter(connection);
 		sqlFileExecuter.dropSchema();
 		try {
-			sqlFileExecuter.executeSQLFile(new File("res/filmdb.sql"));
+			sqlFileExecuter.executeSQLFile(new File("res/moviedb.sql"));
 		} catch (IOException e) {
 			Log.error(e);
 		}
