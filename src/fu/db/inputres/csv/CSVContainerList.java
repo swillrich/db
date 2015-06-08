@@ -30,7 +30,6 @@ public class CSVContainerList extends ArrayList<CSVRowList> {
 	public boolean addNewRow(String[] data) {
 		List<String> List = Arrays.asList(data);
 		CSVRowList csvRowList = new CSVRowList();
-		add(csvRowList);
 		csvRowList.addAll(List);
 		return super.add(csvRowList);
 	}

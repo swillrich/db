@@ -1,0 +1,100 @@
+tt0111161	The Shawshank Redemption	1994	9.3	1462391	142 mins.	Frank Darabont	Tim Robbins|Morgan Freeman|Bob Gunton	Crime|Drama
+tt0468569	The Dark Knight	2008	9.0	1434598	152 mins.	Christopher Nolan	Christian Bale|Heath Ledger|Aaron Eckhart	Action|Crime|Drama
+tt1375666	Inception	2010	8.8	1234085	148 mins.	Christopher Nolan	Leonardo DiCaprio|Joseph Gordon-Levitt|Ellen Page	Action|Mystery|Sci-Fi|Thriller
+tt0137523	Fight Club	1999	8.9	1144643	139 mins.	David Fincher	Brad Pitt|Edward Norton|Helena Bonham Carter	Drama
+tt0110912	Pulp Fiction	1994	8.9	1136692	154 mins.	Quentin Tarantino	John Travolta|Uma Thurman|Samuel L. Jackson	Crime|Drama
+tt0120737	The Lord of the Rings: The Fellowship of the Ring	2001	8.8	1073731	178 mins.	Peter Jackson	Elijah Wood|Ian McKellen|Orlando Bloom	Adventure|Fantasy
+tt0167260	The Lord of the Rings: The Return of the King	2003	8.9	1048189	201 mins.	Peter Jackson	Elijah Wood|Viggo Mortensen|Ian McKellen	Adventure|Fantasy
+tt0133093	The Matrix	1999	8.7	1045409	136 mins.	Andy Wachowski|Lana Wachowski	Keanu Reeves|Laurence Fishburne|Carrie-Anne Moss	Action|Sci-Fi
+tt0109830	Forrest Gump	1994	8.8	1044898	142 mins.	Robert Zemeckis	Tom Hanks|Robin Wright|Gary Sinise	Drama|Romance
+tt0068646	The Godfather	1972	9.2	1003691	175 mins.	Francis Ford Coppola	Marlon Brando|Al Pacino|James Caan	Crime|Drama
+tt1345836	The Dark Knight Rises	2012	8.5	969100	165 mins.	Christopher Nolan	Christian Bale|Tom Hardy|Anne Hathaway	Action|Thriller
+tt0167261	The Lord of the Rings: The Two Towers	2002	8.7	943856	179 mins.	Peter Jackson	Elijah Wood|Ian McKellen|Viggo Mortensen	Adventure|Fantasy
+tt0114369	Se7en	1995	8.7	871418	127 mins.	David Fincher	Morgan Freeman|Brad Pitt|Kevin Spacey	Drama|Mystery|Thriller
+tt0172495	Gladiator	2000	8.5	839272	155 mins.	Ridley Scott	Russell Crowe|Joaquin Phoenix|Connie Nielsen	Action|Drama
+tt0848228	The Avengers	2012	8.2	834647	143 mins.	Joss Whedon	Robert Downey Jr.|Chris Evans|Scarlett Johansson	Action|Adventure|Sci-Fi
+tt0372784	Batman Begins	2005	8.3	825975	140 mins.	Christopher Nolan	Christian Bale|Michael Caine|Ken Watanabe	Action|Adventure
+tt0499549	Avatar	2009	7.9	786813	162 mins.	James Cameron	Sam Worthington|Zoe Saldana|Sigourney Weaver	Action|Adventure|Fantasy|Sci-Fi
+tt1853728	Django Unchained	2012	8.5	778653	165 mins.	Quentin Tarantino	Jamie Foxx|Christoph Waltz|Leonardo DiCaprio	Western
+tt0076759	Star Wars	1977	8.7	752550	121 mins.	George Lucas	Mark Hamill|Harrison Ford|Carrie Fisher	Action|Adventure|Fantasy|Sci-Fi
+tt0120815	Saving Private Ryan	1998	8.6	749565	169 mins.	Steven Spielberg	Tom Hanks|Matt Damon|Tom Sizemore	Action|Drama|War
+tt0102926	The Silence of the Lambs	1991	8.6	745003	118 mins.	Jonathan Demme	Jodie Foster|Anthony Hopkins|Lawrence A. Bonney	Thriller
+tt0407887	The Departed	2006	8.5	744258	151 mins.	Martin Scorsese	Leonardo DiCaprio|Matt Damon|Jack Nicholson	Crime|Drama|Thriller
+tt0108052	Schindler's List	1993	8.9	742054	195 mins.	Steven Spielberg	Liam Neeson|Ralph Fiennes|Ben Kingsley	Biography|Drama|History
+tt0209144	Memento	2000	8.5	734847	113 mins.	Christopher Nolan	Guy Pearce|Carrie-Anne Moss|Joe Pantoliano	Mystery|Thriller
+tt0361748	Inglourious Basterds	2009	8.3	731964	153 mins.	Quentin Tarantino	Brad Pitt|Diane Kruger|Eli Roth	Adventure|Drama|War
+tt0169547	American Beauty	1999	8.4	719485	122 mins.	Sam Mendes	Kevin Spacey|Annette Bening|Thora Birch	Drama|Romance
+tt0482571	The Prestige	2006	8.5	713489	130 mins.	Christopher Nolan	Christian Bale|Hugh Jackman|Scarlett Johansson	Drama|Mystery|Thriller
+tt0325980	Pirates of the Caribbean: The Curse of the Black Pearl	2003	8.1	700518	143 mins.	Gore Verbinski	Johnny Depp|Geoffrey Rush|Orlando Bloom	Adventure|Fantasy
+tt0120338	Titanic	1997	7.7	688921	194 mins.	James Cameron	Leonardo DiCaprio|Kate Winslet|Billy Zane	Drama|Romance
+tt0434409	V for Vendetta	2005	8.2	685053	132 mins.	James McTeigue	Hugo Weaving|Natalie Portman|Rupert Graves	Action|Drama|Thriller
+tt0080684	Star Wars: Episode V - The Empire Strikes Back	1980	8.8	683195	124 mins.	Irvin Kershner	Mark Hamill|Harrison Ford|Carrie Fisher	Action|Adventure|Fantasy|Sci-Fi
+tt0120586	American History X	1998	8.6	678094	119 mins.	Tony Kaye	Edward Norton|Edward Furlong|Beverly D'Angelo	Crime|Drama
+tt0071562	The Godfather: Part II	1974	9.1	675484	200 mins.	Francis Ford Coppola	Al Pacino|Robert De Niro|Robert Duvall	Crime|Drama
+tt0120689	The Green Mile	1999	8.5	652539	189 mins.	Frank Darabont	Tom Hanks|Michael Clarke Duncan|David Morse	Crime|Drama|Fantasy|Mystery
+tt1130884	Shutter Island	2010	8.1	649375	138 mins.	Martin Scorsese	Leonardo DiCaprio|Emily Mortimer|Mark Ruffalo	Mystery|Thriller
+tt0114814	The Usual Suspects	1995	8.6	640856	106 mins.	Bryan Singer	Kevin Spacey|Gabriel Byrne|Chazz Palminteri	Crime|Drama|Thriller
+tt0112573	Braveheart	1995	8.4	638790	177 mins.	Mel Gibson	Mel Gibson|Sophie Marceau|Patrick McGoohan	Action|Biography|Drama|History|War
+tt0103064	Terminator 2: Judgment Day	1991	8.5	637961	137 mins.	James Cameron	Arnold Schwarzenegger|Linda Hamilton|Edward Furlong	Action|Sci-Fi
+tt0816692	Interstellar	2014	8.7	635756	169 mins.	Christopher Nolan	Matthew McConaughey|Anne Hathaway|Jessica Chastain	Adventure|Sci-Fi
+tt0266697	Kill Bill: Vol. 1	2003	8.1	630359	111 mins.	Quentin Tarantino	Uma Thurman|David Carradine|Daryl Hannah	Action
+tt0099685	Goodfellas	1990	8.7	629336	146 mins.	Martin Scorsese	Robert De Niro|Ray Liotta|Joe Pesci	Biography|Crime|Drama
+tt0110413	Léon: The Professional	1994	8.6	618952	110 mins.	Luc Besson	Jean Reno|Gary Oldman|Natalie Portman	Crime|Drama|Thriller
+tt0167404	The Sixth Sense	1999	8.2	617504	107 mins.	M. Night Shyamalan	Bruce Willis|Haley Joel Osment|Toni Collette	Drama|Mystery|Thriller
+tt1392170	The Hunger Games	2012	7.3	617379	142 mins.	Gary Ross	Jennifer Lawrence|Josh Hutcherson|Liam Hemsworth	Adventure|Sci-Fi
+tt0088763	Back to the Future	1985	8.5	606671	116 mins.	Robert Zemeckis	Michael J. Fox|Christopher Lloyd|Lea Thompson	Adventure|Comedy|Romance|Sci-Fi
+tt0910970	WALL·E	2008	8.4	598944	98 mins.	Andrew Stanton	Ben Burtt|Elissa Knight|Jeff Garlin	Animation|Adventure|Family|Sci-Fi
+tt0993846	The Wolf of Wall Street	2013	8.2	595556	180 mins.	Martin Scorsese	Leonardo DiCaprio|Jonah Hill|Margot Robbie	Biography|Comedy|Crime|Drama
+tt0073486	One Flew Over the Cuckoo's Nest	1975	8.7	593626	133 mins.	Milos Forman	Jack Nicholson|Louise Fletcher|Michael Berryman	Drama
+tt0371746	Iron Man	2008	7.9	592651	126 mins.	Jon Favreau	Robert Downey Jr.|Gwyneth Paltrow|Terrence Howard	Action|Adventure|Sci-Fi
+tt0401792	Sin City	2005	8.1	585661	124 mins.	Frank Miller|Robert Rodriguez	Mickey Rourke|Clive Owen|Bruce Willis	Crime|Thriller
+tt0338013	Eternal Sunshine of the Spotless Mind	2004	8.4	576070	108 mins.	Michel Gondry	Jim Carrey|Kate Winslet|Tom Wilkinson	Drama|Romance|Sci-Fi
+tt0082971	Raiders of the Lost Ark	1981	8.6	571407	115 mins.	Steven Spielberg	Harrison Ford|Karen Allen|Paul Freeman	Action|Adventure
+tt0266543	Finding Nemo	2003	8.2	571293	100 mins.	Andrew Stanton|Lee Unkrich	Albert Brooks|Ellen DeGeneres|Alexander Gould	Animation|Adventure|Comedy|Family
+tt1010048	Slumdog Millionaire	2008	8.0	570671	120 mins.	Danny Boyle|Loveleen Tandan	Dev Patel|Freida Pinto|Saurabh Shukla	Drama|Romance
+tt0120382	The Truman Show	1998	8.1	567971	103 mins.	Peter Weir	Jim Carrey|Ed Harris|Laura Linney	Drama
+tt0105236	Reservoir Dogs	1992	8.4	564026	99 mins.	Quentin Tarantino	Harvey Keitel|Tim Roth|Michael Madsen	Crime|Drama
+tt0903624	The Hobbit: An Unexpected Journey	2012	8.0	562963	169 mins.	Peter Jackson	Martin Freeman|Ian McKellen|Richard Armitage	Adventure|Fantasy
+tt0416449	300	2006	7.8	546362	117 mins.	Zack Snyder	Gerard Butler|Lena Headey|David Wenham	Action|Fantasy|War
+tt1049413	Up	2009	8.3	545230	96 mins.	Pete Docter|Bob Peterson	Edward Asner|Jordan Nagai|John Ratzenberger	Animation|Adventure|Comedy|Family
+tt0086190	Star Wars: Episode VI - Return of the Jedi	1983	8.4	542735	134 mins.	Richard Marquand	Mark Hamill|Harrison Ford|Carrie Fisher	Action|Adventure|Fantasy|Sci-Fi
+tt0110357	The Lion King	1994	8.5	530938	89 mins.	Roger Allers|Rob Minkoff	Matthew Broderick|Jeremy Irons|James Earl Jones	Animation|Adventure|Drama|Family|Musical
+tt0477348	No Country for Old Men	2007	8.1	528423	122 mins.	Ethan Coen|Joel Coen	Tommy Lee Jones|Javier Bardem|Josh Brolin	Crime|Drama|Thriller
+tt0208092	Snatch.	2000	8.3	524702	104 mins.	Guy Ritchie	Jason Statham|Brad Pitt|Benicio Del Toro	Comedy|Crime
+tt1119646	The Hangover	2009	7.8	519107	100 mins.	Todd Phillips	Zach Galifianakis|Bradley Cooper|Justin Bartha	Comedy
+tt0081505	The Shining	1980	8.5	519114	146 mins.	Stanley Kubrick	Jack Nicholson|Shelley Duvall|Danny Lloyd	Horror
+tt0114709	Toy Story	1995	8.3	518062	81 mins.	John Lasseter	Tom Hanks|Tim Allen|Don Rickles	Animation|Adventure|Comedy|Family|Fantasy
+tt0095016	Die Hard	1988	8.3	517724	131 mins.	John McTiernan	Bruce Willis|Alan Rickman|Bonnie Bedelia	Action|Thriller
+tt0119217	Good Will Hunting	1997	8.3	517077	126 mins.	Gus Van Sant	Robin Williams|Matt Damon|Ben Affleck	Drama
+tt0246578	Donnie Darko	2001	8.1	510680	113 mins.	Richard Kelly	Jake Gyllenhaal|Jena Malone|Mary McDonnell	Drama|Mystery|Sci-Fi
+tt0268978	A Beautiful Mind	2001	8.2	509710	135 mins.	Ron Howard	Russell Crowe|Ed Harris|Jennifer Connelly	Biography|Drama
+tt0088247	The Terminator	1984	8.1	508599	107 mins.	James Cameron	Arnold Schwarzenegger|Linda Hamilton|Michael Biehn	Action|Sci-Fi
+tt1454468	Gravity	2013	7.9	502299	91 mins.	Alfonso CuarÃ³n	Sandra Bullock|George Clooney|Ed Harris	Sci-Fi|Thriller
+tt0180093	Requiem for a Dream	2000	8.4	499913	102 mins.	Darren Aronofsky	Ellen Burstyn|Jared Leto|Jennifer Connelly	Drama
+tt0947798	Black Swan	2010	8.0	491917	108 mins.	Darren Aronofsky	Natalie Portman|Mila Kunis|Vincent Cassel	Drama|Mystery|Thriller
+tt1205489	Gran Torino	2008	8.2	491604	116 mins.	Clint Eastwood	Clint Eastwood|Bee Vang|Christopher Carley	Drama
+tt2015381	Guardians of the Galaxy	2014	8.1	491551	121 mins.	James Gunn	Chris Pratt|Vin Diesel|Bradley Cooper	Action|Adventure|Sci-Fi
+tt0107290	Jurassic Park	1993	8.1	486840	127 mins.	Steven Spielberg	Sam Neill|Laura Dern|Jeff Goldblum	Adventure|Sci-Fi|Thriller
+tt0078748	Alien	1979	8.5	484040	117 mins.	Ridley Scott	Sigourney Weaver|Tom Skerritt|John Hurt	Horror|Sci-Fi
+tt0198781	Monsters, Inc.	2001	8.1	482512	92 mins.	Pete Docter|David Silverman	Billy Crystal|John Goodman|Mary Gibbs	Animation|Adventure|Comedy|Family|Fantasy
+tt1136608	District 9	2009	8.0	482266	112 mins.	Neill Blomkamp	Sharlto Copley|David James|Jason Cope	Action|Sci-Fi|Thriller
+tt0066921	A Clockwork Orange	1971	8.4	477851	136 mins.	Stanley Kubrick	Malcolm McDowell|Patrick Magee|Michael Bates	Crime|Drama|Sci-Fi
+tt0145487	Spider-Man	2002	7.3	476149	121 mins.	Sam Raimi	Tobey Maguire|Kirsten Dunst|Willem Dafoe	Action|Adventure
+tt1300854	Iron Man 3	2013	7.3	471898	130 mins.	Shane Black	Robert Downey Jr.|Guy Pearce|Gwyneth Paltrow	Action|Adventure|Sci-Fi
+tt0317248	City of God	2002	8.7	466477	130 mins.	Fernando Meirelles|KÃ¡tia Lund	Alexandre Rodrigues|Matheus Nachtergaele|Leandro Firmino	Crime|Drama
+tt1045658	Silver Linings Playbook	2012	7.8	466308	122 mins.	David O. Russell	Bradley Cooper|Jennifer Lawrence|Robert De Niro	Comedy|Drama|Romance
+tt0770828	Man of Steel	2013	7.2	465608	143 mins.	Zack Snyder	Henry Cavill|Amy Adams|Michael Shannon	Action|Adventure|Fantasy|Sci-Fi
+tt0418279	Transformers	2007	7.2	464713	144 mins.	Michael Bay	Shia LaBeouf|Megan Fox|Josh Duhamel	Action|Adventure|Sci-Fi
+tt0086250	Scarface	1983	8.3	464041	170 mins.	Brian De Palma	Al Pacino|Michelle Pfeiffer|Steven Bauer	Crime|Drama
+tt0211915	Amélie	2001	8.4	463633	122 mins.	Jean-Pierre Jeunet	Audrey Tautou|Mathieu Kassovitz|Rufus	Comedy|Romance
+tt0118715	The Big Lebowski	1998	8.2	462939	117 mins.	Joel Coen	Jeff Bridges|John Goodman|Julianne Moore	Comedy|Crime
+tt0796366	Star Trek	2009	8.0	462077	127 mins.	J.J. Abrams	Chris Pine|Zachary Quinto|Simon Pegg	Action|Adventure|Sci-Fi
+tt0480249	I Am Legend	2007	7.2	461069	101 mins.	Francis Lawrence	Will Smith|Alice Braga|Charlie Tahan	Drama|Sci-Fi|Thriller
+tt0383574	Pirates of the Caribbean: Dead Man's Chest	2006	7.3	457445	151 mins.	Gore Verbinski	Johnny Depp|Orlando Bloom|Keira Knightley	Action|Adventure|Fantasy
+tt0435761	Toy Story 3	2010	8.4	454688	103 mins.	Lee Unkrich	Tom Hanks|Tim Allen|Joan Cusack	Animation|Adventure|Comedy|Family|Fantasy
+tt1201607	Harry Potter and the Deathly Hallows: Part 2	2011	8.1	452004	130 mins.	David Yates	Daniel Radcliffe|Emma Watson|Rupert Grint	Adventure|Fantasy|Mystery
+tt0800369	Thor	2011	7.0	451543	115 mins.	Kenneth Branagh	Chris Hemsworth|Anthony Hopkins|Natalie Portman	Action|Adventure|Fantasy
+tt0378194	Kill Bill: Vol. 2	2004	8.0	450421	137 mins.	Quentin Tarantino	Uma Thurman|David Carradine|Michael Madsen	Action|Crime|Thriller
+tt1074638	Skyfall	2012	7.8	446372	143 mins.	Sam Mendes	Daniel Craig|Javier Bardem|Naomie Harris	Action|Adventure|Thriller
+tt1270798	X-Men: First Class	2011	7.8	442553	132 mins.	Matthew Vaughn	James McAvoy|Michael Fassbender|Jennifer Lawrence	Action|Adventure|Sci-Fi
+tt0097576	Indiana Jones and the Last Crusade	1989	8.3	442241	127 mins.	Steven Spielberg	Harrison Ford|Sean Connery|Alison Doody	Action|Adventure

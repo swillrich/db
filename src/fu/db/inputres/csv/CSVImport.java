@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 /**
  * @author Sven Willrich
@@ -17,6 +18,8 @@ public class CSVImport {
 	 * Specifies the separator being used while parsing the CSV
 	 */
 	public static String SEPARATOR = ";";
+
+	public static Charset charset = Charset.forName("utf-8");
 
 	/**
 	 * Used to convert a given CSV file to own data structure, here
