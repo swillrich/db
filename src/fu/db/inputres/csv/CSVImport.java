@@ -21,6 +21,17 @@ public class CSVImport {
 
 	public static Charset charset = Charset.forName("utf-8");
 
+	private CSVContainerList list = new CSVContainerList();
+	private CSVContainerList invalideEntries = new CSVContainerList();
+
+	public CSVContainerList getList() {
+		return list;
+	}
+
+	public CSVContainerList getInvalideEntries() {
+		return invalideEntries;
+	}
+
 	/**
 	 * Used to convert a given CSV file to own data structure, here
 	 * CSVContainerList
@@ -33,9 +44,8 @@ public class CSVImport {
 	 * @return the CSVContainreList inflated by CSV file content
 	 * @throws IOException
 	 */
-	public static CSVContainerList convert(File file, boolean firstRowIsHeader)
+	public void importCSV(File file, boolean firstRowIsHeader)
 			throws IOException {
-		CSVContainerList list = new CSVContainerList();
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		String currentLine;
 		if (firstRowIsHeader) {
@@ -43,9 +53,17 @@ public class CSVImport {
 			list.setHeaderData(currentLine.split(SEPARATOR));
 		}
 		while ((currentLine = reader.readLine()) != null) {
-			list.addNewRow(currentLine.split(SEPARATOR));
+			boolean successfully = fixIfInvalidate(currentLine, reader);
+			if (successfully) {
+				list.addNewRow(currentLine.split(SEPARATOR));
+			} else {
+				invalideEntries.addNewRow(currentLine.split(SEPARATOR));
+			}
 		}
-		return list;
+	}
+
+	boolean fixIfInvalidate(String currentLine, BufferedReader reader) {
+		return true;
 	}
 
 	/**
@@ -53,8 +71,10 @@ public class CSVImport {
 	 */
 	public static void main(String[] args) {
 		try {
-			CSVContainerList convert = convert(new File("res/sample.csv"), true);
-			System.out.println(convert);
+			CSVImport csvImport = new CSVImport();
+			csvImport.importCSV(new File("res/sample.csv"), true);
+
+			System.out.println(csvImport.getList());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

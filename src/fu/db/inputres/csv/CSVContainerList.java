@@ -19,6 +19,8 @@ public class CSVContainerList extends ArrayList<CSVRowList> {
 	public CSVRowList getHeader() {
 		return header;
 	}
+	
+	
 
 	/**
 	 * This method adds an new CSV line
