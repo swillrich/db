@@ -1,7 +1,7 @@
 CREATE SCHEMA moviedb;
 
 CREATE TABLE moviedb.genre ( 
-	id                   integer  NOT NULL,
+	id                   serial  NOT NULL,
 	genre                varchar(255)  NOT NULL,
 	CONSTRAINT pk_genre PRIMARY KEY ( id )
  );
@@ -19,7 +19,7 @@ CREATE TABLE moviedb.movie (
 CREATE INDEX idx_film ON moviedb.movie ( genre );
 
 CREATE TABLE moviedb.persontype ( 
-	id                   SERIAL NOT NULL,
+	id                   serial NOT NULL,
 	persontype           varchar(100)  NOT NULL,
 	CONSTRAINT pk_persontype PRIMARY KEY ( id )
  );

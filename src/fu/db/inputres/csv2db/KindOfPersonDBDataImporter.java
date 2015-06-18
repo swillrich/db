@@ -2,6 +2,7 @@ package fu.db.inputres.csv2db;
 
 import java.sql.SQLException;
 
+import fu.db.Log;
 import fu.db.connection.InsertStat;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
 import fu.db.inputres.csv.CSVImport.ValueTransformer;
@@ -34,7 +35,7 @@ public class KindOfPersonDBDataImporter extends DBDataImporter {
 					.setColumns("persontype").setValues(s).insertIfNotExists()
 					.done();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Log.error(e);
 		}
 
 	}

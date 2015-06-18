@@ -6,10 +6,8 @@ import fu.db.inputres.ImbdCSVImporter;
 public class CSV2DB {
 
 	public void transform(ImbdCSVImporter data, DBConnection connection) {
-		DBDataImporter[] importerArray = new DBDataImporter[] { new KindOfPersonDBDataImporter() };
-		// DBDataImporter[] importerArray = new DBDataImporter[] {
-		// new KindOfPersonDBDataImporter(), new ActorDBDataImporter(),
-		// new GenresDBDataImporter() };
+		DBDataImporter[] importerArray = new DBDataImporter[] {
+				new KindOfPersonDBDataImporter(), new GenresDBDataImporter() };
 		for (DBDataImporter importer : importerArray) {
 			importer.start(data, connection);
 		}

@@ -32,6 +32,9 @@ public class InsertStat extends UpdateStat {
 
 	public InsertStat setValues(String... values) {
 		this.values = values;
+		for (int i = 0; i < values.length; i++) {
+			values[i] = values[i].replace("'", "''");
+		}
 		return this;
 	}
 
