@@ -3,7 +3,6 @@ package fu.db.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import fu.db.Log;
 import fu.db.inputres.DBProperties;
@@ -24,27 +23,16 @@ public class DBConnection {
 
 	private Connection connection;
 
-	public Connection getConnection() {
-		return connection;
-	}
-
 	public static DBConnection getINSTANCE() {
 		return INSTANCE;
 	}
 
-	/**
-	 * Returns a new instantiated statement object for update and selection
-	 * statements
-	 * 
-	 * @return the new generated statement
-	 */
-	public Statement getNewStat() {
-		try {
-			return this.connection.createStatement();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
+	public Connection getConnection() {
+		return connection;
+	}
+
+	public void close() {
+
 	}
 
 	private DBConnection() {

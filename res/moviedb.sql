@@ -11,13 +11,15 @@ CREATE TABLE moviedb.movie (
 	title                varchar(255)  NOT NULL,
 	releaseyear          date  NOT NULL,
 	genre                integer  NOT NULL,
+    votes                integer NOT NULL,
+    runtime              integer NOT NULL,
 	CONSTRAINT pk_film PRIMARY KEY ( id )
  );
 
 CREATE INDEX idx_film ON moviedb.movie ( genre );
 
 CREATE TABLE moviedb.persontype ( 
-	id                   integer  NOT NULL,
+	id                   SERIAL NOT NULL,
 	persontype           varchar(100)  NOT NULL,
 	CONSTRAINT pk_persontype PRIMARY KEY ( id )
  );
