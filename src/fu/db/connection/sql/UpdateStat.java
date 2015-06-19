@@ -12,13 +12,9 @@ public class UpdateStat<T extends UpdateStat> extends AbstractStat<T> {
 		return amountOfChanges;
 	}
 
-	public UpdateStat(String sql) {
-		super(sql);
-	}
-
 	@Override
 	public String getPreMessage() {
-		return "Update statements will be execute: \n" + getSql();
+		return "Update statements will be execute: " + getSql();
 	}
 
 	@Override

@@ -6,29 +6,26 @@ import fu.db.Log;
 
 public class InsertStat extends UpdateStat<InsertStat> {
 
-	public InsertStat() {
-		super("");
-	}
-
 	@Override
 	public String getPostMessage() {
 		return getAmountOfChanges()
 				+ " insertions done by the following statement: " + getSql();
 	}
 
+	@Override
+	public String getPreMessage() {
+		return null;
+	}
+
 	public InsertStat insertIfNotExists() throws SQLException {
-		Log.info("**********Existence check*********");
 		SelectStat stat = new SelectStat().setColumns(getColumns())
 				.setTable(getTable()).setValues(getValues()).execute();
-		Log.info("**********Existence check finished*********");
 		boolean isEmpty = stat.isResultSetEmpty();
 		stat.done();
 		if (!isEmpty) {
-			Log.error("Execution inpossible, existence check is positive for "
-					+ generateSQLString());
+			Log.error("Insertion would lead to violation, the statement performs to a non-empty result: "
+					+ stat.getSql());
 		} else {
-			Log.info("Execution possible, existence check is negative for "
-					+ generateSQLString());
 			return execute();
 		}
 		return this;

@@ -7,16 +7,22 @@ CREATE TABLE moviedb.genre (
  );
 
 CREATE TABLE moviedb.movie ( 
-	id                   integer  NOT NULL,
+	id                   varchar(100)  NOT NULL,
 	title                varchar(255)  NOT NULL,
-	releaseyear          date  NOT NULL,
-	genre                integer  NOT NULL,
+	year                 integer  NOT NULL,
+    rating               integer NOT NULL,
     votes                integer NOT NULL,
     runtime              integer NOT NULL,
 	CONSTRAINT pk_film PRIMARY KEY ( id )
  );
-
-CREATE INDEX idx_film ON moviedb.movie ( genre );
+ 
+ CREATE TABLE moviedb.moviehasgenre (
+    movie                varchar(100) NOT NULL,
+    genre                integer NOT NULL,
+    CONSTRAINT pk_moviehasgenre PRIMARY KEY (movie, genre),
+    CONSTRAINT fk_moviehasgenre_movie FOREIGN KEY (movie) REFERENCES moviedb.movie(id),
+    CONSTRAINT fk_moviehasgenre_genre FOREIGN KEY (genre) REFERENCES moviedb.genre(id)
+ );
 
 CREATE TABLE moviedb.persontype ( 
 	id                   serial NOT NULL,
@@ -24,56 +30,27 @@ CREATE TABLE moviedb.persontype (
 	CONSTRAINT pk_persontype PRIMARY KEY ( id )
  );
 
-CREATE TABLE moviedb.rating ( 
-	id                   integer  NOT NULL,
-	movie                integer  NOT NULL,
-	rating               integer  NOT NULL,
-	CONSTRAINT pk_bewertung PRIMARY KEY ( id ),
-	CONSTRAINT pk_bewertung_0 UNIQUE ( movie ) 
- );
-
 CREATE TABLE moviedb.person ( 
 	id                   serial  NOT NULL,
 	lastname             varchar(100)  NOT NULL,
 	firstname            varchar(100),
 	persontype           integer  NOT NULL,
-	"alias"              varchar(100)  ,
-	CONSTRAINT pk_person PRIMARY KEY ( id )
+	CONSTRAINT pk_person PRIMARY KEY ( id ),
+	CONSTRAINT fk_person FOREIGN KEY ( persontype ) REFERENCES moviedb.persontype( id )
  );
 
-CREATE INDEX idx_person ON moviedb.person ( persontype );
-
-CREATE TABLE moviedb.mivehasdirector ( 
+CREATE TABLE moviedb.moviehasdirector ( 
 	director             integer  NOT NULL,
-	movie                integer  NOT NULL,
-	CONSTRAINT idx_mivehasdirector PRIMARY KEY ( director, movie )
+	movie                varchar(100)  NOT NULL,
+	CONSTRAINT idx_moviehasdirector PRIMARY KEY ( director, movie ),
+	CONSTRAINT fk_moviehasdirector_movie FOREIGN KEY ( movie ) REFERENCES moviedb.movie( id ),
+	CONSTRAINT fk_moviehasdirector_director FOREIGN KEY ( director ) REFERENCES moviedb.person( id )
  );
-
-CREATE INDEX idx_mivehasdirector_0 ON moviedb.mivehasdirector ( movie );
-
-CREATE INDEX idx_mivehasdirector_1 ON moviedb.mivehasdirector ( director );
 
 CREATE TABLE moviedb.moviehasperson ( 
-	movie                integer  NOT NULL,
+	movie                varchar(100)  NOT NULL,
 	person               integer  NOT NULL,
-	CONSTRAINT idx_filmhatperson PRIMARY KEY ( movie, person )
+	CONSTRAINT idx_filmhatperson PRIMARY KEY ( movie, person ),
+	CONSTRAINT fk_moviehasperson_movie FOREIGN KEY (movie) REFERENCES moviedb.movie(id),
+	CONSTRAINT fk_moviehasperson_person FOREIGN KEY (person) REFERENCES moviedb.person(id)
  );
-
-CREATE INDEX idx_filmhatperson_0 ON moviedb.moviehasperson ( movie );
-
-CREATE INDEX idx_filmhatperson_1 ON moviedb.moviehasperson ( person );
-
-ALTER TABLE moviedb.mivehasdirector ADD CONSTRAINT fk_mivehasdirector FOREIGN KEY ( movie ) REFERENCES moviedb.movie( id );
-
-ALTER TABLE moviedb.mivehasdirector ADD CONSTRAINT fk_mivehasdirector_0 FOREIGN KEY ( director ) REFERENCES moviedb.person( id );
-
-ALTER TABLE moviedb.movie ADD CONSTRAINT fk_film_genre FOREIGN KEY ( genre ) REFERENCES moviedb.genre( id );
-
-ALTER TABLE moviedb.moviehasperson ADD CONSTRAINT fk_filmhatperson FOREIGN KEY ( movie ) REFERENCES moviedb.movie( id );
-
-ALTER TABLE moviedb.moviehasperson ADD CONSTRAINT fk_filmhatperson_0 FOREIGN KEY ( person ) REFERENCES moviedb.person( id );
-
-ALTER TABLE moviedb.person ADD CONSTRAINT fk_person FOREIGN KEY ( persontype ) REFERENCES moviedb.persontype( id );
-
-ALTER TABLE moviedb.rating ADD CONSTRAINT fk_bewertung FOREIGN KEY ( movie ) REFERENCES moviedb.movie( id );
-

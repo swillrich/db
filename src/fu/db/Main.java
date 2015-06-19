@@ -6,8 +6,8 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 
 import fu.db.connection.DBConnection;
+import fu.db.inputres.CSV2DB;
 import fu.db.inputres.ImbdCSVImporter;
-import fu.db.inputres.csv2db.CSV2DB;
 import fu.db.sql.SQLFileExecuter;
 
 /**

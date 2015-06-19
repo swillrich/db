@@ -56,7 +56,9 @@ public abstract class AbstractStat<T extends AbstractStat> {
 	public T setValues(Object... values) {
 		this.values = values;
 		for (int i = 0; i < values.length; i++) {
-			values[i] = ((String) values[i]).replace("'", "''");
+			if (values[i] instanceof String) {
+				values[i] = ((String) values[i]).replace("'", "''");
+			}
 		}
 		return (T) this;
 	}
@@ -65,16 +67,9 @@ public abstract class AbstractStat<T extends AbstractStat> {
 		return statement;
 	}
 
-	public void setSql(String sql) {
+	public T setSql(String sql) {
 		this.sql = sql;
-	}
-
-	public AbstractStat(String sql) {
-		this.sql = sql;
-	}
-
-	public AbstractStat() {
-
+		return (T) this;
 	}
 
 	public void done() {
@@ -97,7 +92,9 @@ public abstract class AbstractStat<T extends AbstractStat> {
 	}
 
 	public T execute() throws SQLException {
-		sql = generateSQLString();
+		if (sql == null) {
+			sql = generateSQLString();
+		}
 
 		if (getPreMessage() != null) {
 			Log.info(getPreMessage());
@@ -124,9 +121,10 @@ public abstract class AbstractStat<T extends AbstractStat> {
 		return (T) this;
 	}
 
-	public void executeAndDone() throws SQLException {
+	public T executeAndDone() throws SQLException {
 		execute();
 		done();
+		return (T) this;
 	}
 
 	public T printResultSet() {

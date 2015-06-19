@@ -13,11 +13,7 @@ import fu.db.inputres.csv.CSVRowList;
 
 public class ActorDBDataImporter extends DBDataImporter {
 
-	private int foreignKeyActors = 0;
-
-	public ActorDBDataImporter() {
-		setForeignKeyForActors();
-	}
+	private int foreignKeyActors = -1;
 
 	@Override
 	public ValueTransformer<?> getValueTransformer(CSVIterator csvIterator) {
@@ -53,30 +49,38 @@ public class ActorDBDataImporter extends DBDataImporter {
 	}
 
 	@Override
-	public void onEachCSVRowElement(String value) {
+	public void onEachCSVRowElement(int rowId, int columnId, String value) {
 		// TODO Auto-generated method stub
 
 	}
 
 	private void setForeignKeyForActors() {
-		try {
-			ResultSet resultSet = new SelectStat(
-					"SELECT id FROM persontype WHERE persontype = 'actor';")
-					.execute().getResultSet();
-			resultSet.next();
-			foreignKeyActors = resultSet.getInt("id");
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (foreignKeyActors < 0) {
+			try {
+				SelectStat selectStat = new SelectStat();
+				ResultSet resultSet = selectStat
+						.setSql("SELECT id FROM moviedb.persontype WHERE persontype = 'actor';")
+						.execute().getResultSet();
+				if (resultSet.next()) {
+					foreignKeyActors = resultSet.getInt(1);
+				}
+				selectStat.done();
+				return;
+			} catch (SQLException e) {
+				Log.error(e);
+			}
 		}
-		foreignKeyActors = -1;
 	}
 
 	@Override
 	public void forEachInSet(String s) {
+
+		setForeignKeyForActors();
+
 		InsertStat stat = new InsertStat().setTable("moviedb.person");
 		int indexOf = s.indexOf(" ");
 		if (indexOf == -1) {
-			stat.setColumns("firstname", "persontype").setValues(s,
+			stat.setColumns("lastname", "persontype").setValues(s,
 					foreignKeyActors);
 		} else {
 			String firstName = s.substring(0, indexOf);
@@ -85,7 +89,7 @@ public class ActorDBDataImporter extends DBDataImporter {
 					firstName, lastName, foreignKeyActors);
 		}
 		try {
-			stat.insertIfNotExists().done();
+			stat.executeAndDone();
 		} catch (SQLException e) {
 			Log.error(e);
 		}

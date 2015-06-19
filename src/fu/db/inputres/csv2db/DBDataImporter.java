@@ -5,7 +5,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import fu.db.connection.DBConnection;
-import fu.db.connection.sql.AbstractStat;
 import fu.db.inputres.ImbdCSVImporter;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
 import fu.db.inputres.csv.CSVImport.ValueTransformer;
@@ -53,8 +52,9 @@ public abstract class DBDataImporter {
 				}
 
 				@Override
-				public void defaultProcessorForEachElement(String value) {
-					onEachCSVRowElement(value);
+				public void defaultProcessorForEachElement(int rowId,
+						int columnId, String value) {
+					onEachCSVRowElement(rowId, columnId, value);
 				}
 
 			};
@@ -77,8 +77,22 @@ public abstract class DBDataImporter {
 
 	public abstract void onEachCSVRow(CSVRowList list);
 
-	public abstract void onEachCSVRowElement(String value);
+	public abstract void onEachCSVRowElement(int rowId, int columnId,
+			String value);
 
 	public abstract void forEachInSet(String s);
 
+	public <T> T getAs(String o, Class<T> clazz) {
+		try {
+			if (clazz.equals(Integer.class)) {
+				return (T) Integer.valueOf(o);
+			} else if (clazz.equals(Double.class)) {
+				return (T) Double.valueOf(o);
+			} else {
+				return (T) o;
+			}
+		} catch (ClassCastException e) {
+			return null;
+		}
+	}
 }

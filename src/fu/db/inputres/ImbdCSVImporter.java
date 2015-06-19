@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import fu.db.Log;
 import fu.db.inputres.csv.CSVImport;
 
 public class ImbdCSVImporter extends CSVImport {
@@ -16,22 +17,21 @@ public class ImbdCSVImporter extends CSVImport {
 			SEPARATOR = "\t";
 			importCSV(path.toFile(), false);
 			getList().setHeaderData(titles);
-			System.out.println(getList().size() + " entries imported");
-			System.out
-					.println(getInvalideEntries().size()
-							+ " entries do not meet format requirements, these remain unused");
+			Log.info(getList().size() + " entries imported");
+			Log.info(getInvalideEntries().size()
+					+ " entries do not meet format requirements, these remain unused");
 			printSnipped(3);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			Log.error(e);
 		}
 	}
 
 	private void printSnipped(int j) {
-		System.out.println("\n=> Snipped (top " + j + "):");
-		System.out.println(getList().getHeader());
+		Log.info("\n=> Snipped (top " + j + "):");
+		Log.info(getList().getHeader().toString());
 		for (int i = 0; i < j; i++) {
-			System.out.println(getList().get(i));
+			Log.info(getList().get(i).toString());
 		}
 	}
 

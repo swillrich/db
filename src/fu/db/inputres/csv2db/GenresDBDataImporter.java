@@ -36,7 +36,7 @@ public class GenresDBDataImporter extends DBDataImporter {
 	}
 
 	@Override
-	public void onEachCSVRowElement(String value) {
+	public void onEachCSVRowElement(int rowId, int columnId, String value) {
 		// TODO Auto-generated method stub
 
 	}

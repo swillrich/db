@@ -1,17 +1,10 @@
 package fu.db.connection.sql;
 
 public class SelectStat extends AbstractStat<SelectStat> {
-	public SelectStat(String sql) {
-		super(sql);
-	}
-
-	public SelectStat() {
-		super("");
-	}
 
 	@Override
 	public String getPreMessage() {
-		return "Non-update Statements will be execute: \n" + getSql();
+		return "Select Statements will be execute: " + getSql();
 	}
 
 	@Override
