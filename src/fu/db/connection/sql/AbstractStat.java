@@ -1,4 +1,4 @@
-package fu.db.connection;
+package fu.db.connection.sql;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import fu.db.Log;
+import fu.db.connection.DBConnection;
 
 public abstract class AbstractStat {
 	private Statement statement;

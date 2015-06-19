@@ -4,8 +4,8 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
-import fu.db.connection.AbstractStat;
 import fu.db.connection.DBConnection;
+import fu.db.connection.sql.AbstractStat;
 import fu.db.inputres.ImbdCSVImporter;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
 import fu.db.inputres.csv.CSVImport.ValueTransformer;

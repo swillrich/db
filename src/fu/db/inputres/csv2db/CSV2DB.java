@@ -7,7 +7,8 @@ public class CSV2DB {
 
 	public void transform(ImbdCSVImporter data, DBConnection connection) {
 		DBDataImporter[] importerArray = new DBDataImporter[] {
-				new KindOfPersonDBDataImporter(), new GenresDBDataImporter() };
+				new KindOfPersonDBDataImporter(), new GenresDBDataImporter(),
+				new ActorDBDataImporter() };
 		for (DBDataImporter importer : importerArray) {
 			importer.start(data, connection);
 		}

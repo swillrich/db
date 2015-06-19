@@ -33,9 +33,9 @@ CREATE TABLE moviedb.rating (
  );
 
 CREATE TABLE moviedb.person ( 
-	id                   integer  NOT NULL,
+	id                   serial  NOT NULL,
 	lastname             varchar(100)  NOT NULL,
-	firstname            varchar(100)  NOT NULL,
+	firstname            varchar(100),
 	persontype           integer  NOT NULL,
 	"alias"              varchar(100)  ,
 	CONSTRAINT pk_person PRIMARY KEY ( id )

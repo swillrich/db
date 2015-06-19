@@ -3,7 +3,7 @@ package fu.db.inputres.csv2db;
 import java.sql.SQLException;
 
 import fu.db.Log;
-import fu.db.connection.InsertStat;
+import fu.db.connection.sql.InsertStat;
 import fu.db.domain.Genre;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
 import fu.db.inputres.csv.CSVImport.ValueTransformer;

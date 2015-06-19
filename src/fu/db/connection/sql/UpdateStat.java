@@ -1,4 +1,4 @@
-package fu.db.connection;
+package fu.db.connection.sql;
 
 public class UpdateStat extends AbstractStat {
 

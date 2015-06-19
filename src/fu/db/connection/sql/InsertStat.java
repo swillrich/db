@@ -1,4 +1,4 @@
-package fu.db.connection;
+package fu.db.connection.sql;
 
 import java.sql.SQLException;
 
