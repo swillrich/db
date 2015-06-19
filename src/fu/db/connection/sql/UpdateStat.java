@@ -1,6 +1,6 @@
 package fu.db.connection.sql;
 
-public class UpdateStat extends AbstractStat {
+public class UpdateStat<T extends UpdateStat> extends AbstractStat<T> {
 
 	private int amountOfChanges = -1;
 
@@ -26,4 +26,8 @@ public class UpdateStat extends AbstractStat {
 		return null;
 	}
 
+	@Override
+	public String generateSQLString() {
+		return "";
+	}
 }
