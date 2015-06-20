@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.sql.Connection;
 
+import fu.db.cmi.CLIUserInteraction;
 import fu.db.connection.DBConnection;
+import fu.db.connection.SQLFileReaderAndExecuter;
 import fu.db.inputres.CSV2DB;
 import fu.db.inputres.ImbdCSVImporter;
-import fu.db.sql.SQLFileExecuter;
 
 /**
  * @author Sven Willrich
@@ -21,6 +22,11 @@ public class Main {
 	}
 
 	public Main() {
+		new CLIUserInteraction().start();
+//		resetDatabaseAndReloadInData();
+	}
+
+	private void resetDatabaseAndReloadInData() {
 		resetDatabaseSchema();
 		insertCSV();
 	}
@@ -34,7 +40,8 @@ public class Main {
 
 	private void resetDatabaseSchema() {
 		Connection connection = DBConnection.getINSTANCE().getConnection();
-		SQLFileExecuter sqlFileExecuter = new SQLFileExecuter(connection);
+		SQLFileReaderAndExecuter sqlFileExecuter = new SQLFileReaderAndExecuter(
+				connection);
 		sqlFileExecuter.dropSchema();
 		try {
 			sqlFileExecuter.executeSQLFile(new File("res/moviedb.sql"));

@@ -13,6 +13,7 @@ import fu.db.domain.Person;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
 import fu.db.inputres.csv.CSVImport.ValueTransformer;
 import fu.db.inputres.csv.CSVRowList;
+import fu.db.inputres.performance.Cache;
 
 public class MovieHasDirectorAndActorAndGenreDBDataImporter extends
 		DBDataImporter {
@@ -33,14 +34,56 @@ public class MovieHasDirectorAndActorAndGenreDBDataImporter extends
 		}
 	}
 
+	Cache movieHasGenre = new Cache() {
+
+		@Override
+		public String getIdentifier(String... elements) {
+			return elements[0];
+		}
+
+		@Override
+		public String[] onIsNotInCacheContaining(String... elements) {
+			Genre genre = new GenreDao().findGenreByName(elements[0]);
+			return new String[] { String.valueOf(genre.getId()) };
+		}
+
+	};
+
 	private void setGenre(CSVRowList list, String movieId) throws SQLException {
 		for (String element : list.get(8).split("\\|")) {
-			Genre genre = new GenreDao().findGenreByName(element);
+
+			String[] data = movieHasGenre.get(element);
+
+			if (data == null) {
+				data = movieHasGenre.add(element);
+			}
+
 			new InsertStat().setTable("moviedb.moviehasgenre")
 					.setColumns("movie", "genre")
-					.setValues(movieId, genre.getId()).executeAndDone();
+					.setValues(movieId, Integer.valueOf(data[0]))
+					.executeAndDone();
 		}
 	}
+
+	Cache movieHasDirectorOrActorCache = new Cache() {
+
+		@Override
+		public String getIdentifier(String... elements) {
+			if (elements.length == 1) {
+				return elements[0] + elements[1];
+			} else {
+				return elements[0] + elements[1];
+			}
+		}
+
+		@Override
+		public String[] onIsNotInCacheContaining(String... elements) {
+			Person person = new PersonDAO().findPersonByFirstAndLastName(
+					elements[0], elements[1]);
+			return new String[] { String.valueOf(person.getId()) };
+		}
+
+	};
 
 	private void setActorAndDirector(CSVRowList list, String movieId)
 			throws SQLException {
@@ -56,8 +99,13 @@ public class MovieHasDirectorAndActorAndGenreDBDataImporter extends
 				Class<? extends Person> clazzOfPerson = i == 7 ? Actor.class
 						: Director.class;
 
-				Person person = new PersonDAO().findPersonByFirstAndLastName(
-						firstName, lastName, clazzOfPerson);
+				String[] inserData = new String[] { firstName, lastName };
+
+				String[] data = movieHasDirectorOrActorCache.get(inserData);
+
+				if (data == null) {
+					data = movieHasDirectorOrActorCache.add(inserData);
+				}
 
 				new InsertStat()
 						.setTable(
@@ -66,8 +114,8 @@ public class MovieHasDirectorAndActorAndGenreDBDataImporter extends
 												.toLowerCase())
 						.setColumns("movie",
 								clazzOfPerson.getSimpleName().toLowerCase())
-						.setValues(movieId, person.getId()).insertIfNotExists()
-						.done();
+						.setValues(movieId, Integer.valueOf(data[0]))
+						.insertIfNotExists().done();
 			}
 	}
 

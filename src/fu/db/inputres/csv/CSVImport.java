@@ -77,7 +77,7 @@ public class CSVImport {
 	}
 
 	public abstract class CSVIterator {
-		public abstract void onNextRow(CSVRowList element);
+		public abstract void onNextRow(int i, CSVRowList element);
 
 		public abstract void defaultProcessorForEachElement(int rowId, int columnId, String value);
 
@@ -99,7 +99,7 @@ public class CSVImport {
 		public void start() {
 			CSVContainerList list = CSVImport.this.getList();
 			for (int i = 0; i < list.size(); i++) {
-				onNextRow(list.get(i));
+				onNextRow(i, list.get(i));
 				for (int j = 0; j < list.get(i).size(); j++) {
 					ValueTransformer<?> transformer = getById(j);
 					if (transformer == null) {

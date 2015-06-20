@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Formatter;
+import java.util.Locale;
 
 import fu.db.Log;
 import fu.db.connection.DBConnection;
@@ -131,32 +133,54 @@ public abstract class AbstractStat<T extends AbstractStat> {
 		return (T) this;
 	}
 
+	private String format(StringBuilder sb, boolean underline) {
+		int maxLengthPerCell = 20;
+		String[] split = sb.toString().split("\\|");
+		for (int i = 0; i < split.length; i++) {
+			split[i] = split[i].length() > maxLengthPerCell ? split[i]
+					.substring(0, maxLengthPerCell - 3).concat("...") : split[i];
+		}
+		StringBuilder format = new StringBuilder();
+		for (int i = 0; i < split.length; i++) {
+			format.append("%-" + (maxLengthPerCell + 2) + "s");
+		}
+		String result = String.format(format.toString(), split);
+		if (underline) {
+			result += "\n";
+			int length = result.length();
+			for (int i = 0; i < length; i++) {
+				result += "=";
+			}
+		}
+		return result;
+	}
+
 	public T printResultSet() {
 		try {
 			ResultSetMetaData rsmd = resultSet.getMetaData();
 			String tableName = rsmd.getTableName(1);
-			Log.info("*** " + tableName + " ***");
+			Log.info("\n*** " + tableName + " ***");
 
 			int numberOfColumns = rsmd.getColumnCount();
 
 			StringBuilder b = new StringBuilder();
 			for (int i = 1; i <= numberOfColumns; i++) {
 				if (i > 1)
-					b.append(",  ");
+					b.append("|");
 				String columnName = rsmd.getColumnName(i);
 				b.append(columnName);
 			}
-			Log.info(b.toString());
+			Log.info(format(b, true));
 
 			while (resultSet.next()) {
 				b = new StringBuilder();
 				for (int i = 1; i <= numberOfColumns; i++) {
 					if (i > 1)
-						b.append(",  ");
+						b.append("|");
 					String columnValue = resultSet.getString(i);
 					b.append(columnValue);
 				}
-				Log.info(b.toString());
+				Log.info(format(b, false));
 			}
 		} catch (SQLException ex) {
 			Log.error(ex);

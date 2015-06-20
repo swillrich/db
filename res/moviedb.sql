@@ -10,9 +10,9 @@ CREATE TABLE moviedb.movie (
 	id                   varchar(100)  NOT NULL,
 	title                varchar(255)  NOT NULL,
 	year                 integer  NOT NULL,
-    rating               integer NOT NULL,
-    votes                integer NOT NULL,
-    runtime              integer NOT NULL,
+    rating               integer,
+    votes                integer,
+    runtime              integer,
 	CONSTRAINT pk_film PRIMARY KEY ( id )
  );
  
@@ -24,19 +24,11 @@ CREATE TABLE moviedb.movie (
     CONSTRAINT fk_moviehasgenre_genre FOREIGN KEY (genre) REFERENCES moviedb.genre(id)
  );
 
-CREATE TABLE moviedb.persontype ( 
-	id                   serial NOT NULL,
-	persontype           varchar(100)  NOT NULL,
-	CONSTRAINT pk_persontype PRIMARY KEY ( id )
- );
-
 CREATE TABLE moviedb.person ( 
 	id                   serial  NOT NULL,
 	lastname             varchar(100)  NOT NULL,
 	firstname            varchar(100),
-	persontype           integer  NOT NULL,
-	CONSTRAINT pk_person PRIMARY KEY ( id ),
-	CONSTRAINT fk_person FOREIGN KEY ( persontype ) REFERENCES moviedb.persontype( id )
+	CONSTRAINT pk_person PRIMARY KEY ( id )
  );
 
 CREATE TABLE moviedb.moviehasdirector ( 

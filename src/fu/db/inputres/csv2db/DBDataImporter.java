@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
+import fu.db.Log;
 import fu.db.connection.DBConnection;
 import fu.db.inputres.ImbdCSVImporter;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
@@ -47,7 +48,7 @@ public abstract class DBDataImporter {
 			this.csvIterator = data.new CSVIterator() {
 
 				@Override
-				public void onNextRow(CSVRowList element) {
+				public void onNextRow(int rowId, CSVRowList element) {
 					onEachCSVRow(element);
 				}
 
@@ -91,7 +92,13 @@ public abstract class DBDataImporter {
 			} else {
 				return (T) o;
 			}
-		} catch (ClassCastException e) {
+		} catch (Exception e) {
+			if (clazz.equals(Integer.class)) {
+				return (T) Integer.valueOf("-1");
+			}
+			if (clazz.equals(Double.class)) {
+				return (T) Double.valueOf("-0.0");
+			}
 			return null;
 		}
 	}
