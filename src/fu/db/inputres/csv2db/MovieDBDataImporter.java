@@ -3,8 +3,6 @@ package fu.db.inputres.csv2db;
 import java.sql.SQLException;
 
 import fu.db.connection.sql.InsertStat;
-import fu.db.connection.sql.SelectStat;
-import fu.db.dao.PersonDAO;
 import fu.db.inputres.csv.CSVImport.CSVIterator;
 import fu.db.inputres.csv.CSVImport.ValueTransformer;
 import fu.db.inputres.csv.CSVRowList;

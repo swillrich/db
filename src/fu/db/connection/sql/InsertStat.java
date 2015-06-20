@@ -1,6 +1,7 @@
 package fu.db.connection.sql;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import fu.db.Log;
 
@@ -19,7 +20,9 @@ public class InsertStat extends UpdateStat<InsertStat> {
 
 	public InsertStat insertIfNotExists() throws SQLException {
 		SelectStat stat = new SelectStat().setColumns(getColumns())
-				.setTable(getTable()).setValues(getValues()).execute();
+				.setTable(getTable())
+				.setValues(Arrays.copyOf(getValues(), getValues().length))
+				.execute();
 		boolean isEmpty = stat.isResultSetEmpty();
 		stat.done();
 		if (!isEmpty) {

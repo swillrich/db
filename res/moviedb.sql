@@ -47,10 +47,10 @@ CREATE TABLE moviedb.moviehasdirector (
 	CONSTRAINT fk_moviehasdirector_director FOREIGN KEY ( director ) REFERENCES moviedb.person( id )
  );
 
-CREATE TABLE moviedb.moviehasperson ( 
+CREATE TABLE moviedb.moviehasactor ( 
 	movie                varchar(100)  NOT NULL,
-	person               integer  NOT NULL,
-	CONSTRAINT idx_filmhatperson PRIMARY KEY ( movie, person ),
+	actor               integer  NOT NULL,
+	CONSTRAINT idx_filmhatperson PRIMARY KEY ( movie, actor ),
 	CONSTRAINT fk_moviehasperson_movie FOREIGN KEY (movie) REFERENCES moviedb.movie(id),
-	CONSTRAINT fk_moviehasperson_person FOREIGN KEY (person) REFERENCES moviedb.person(id)
+	CONSTRAINT fk_moviehasperson_person FOREIGN KEY (actor) REFERENCES moviedb.person(id)
  );

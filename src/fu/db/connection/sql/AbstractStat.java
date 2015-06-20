@@ -55,11 +55,6 @@ public abstract class AbstractStat<T extends AbstractStat> {
 
 	public T setValues(Object... values) {
 		this.values = values;
-		for (int i = 0; i < values.length; i++) {
-			if (values[i] instanceof String) {
-				values[i] = ((String) values[i]).replace("'", "''");
-			}
-		}
 		return (T) this;
 	}
 
@@ -91,8 +86,17 @@ public abstract class AbstractStat<T extends AbstractStat> {
 		}
 	}
 
+	public void treatColumnValuesForInsertion() {
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] instanceof String) {
+				values[i] = ((String) values[i]).replace("'", "''");
+			}
+		}
+	}
+
 	public T execute() throws SQLException {
 		if (sql == null) {
+			treatColumnValuesForInsertion();
 			sql = generateSQLString();
 		}
 

@@ -89,7 +89,7 @@ public class ActorDBDataImporter extends DBDataImporter {
 					firstName, lastName, foreignKeyActors);
 		}
 		try {
-			stat.executeAndDone();
+			stat.insertIfNotExists().done();
 		} catch (SQLException e) {
 			Log.error(e);
 		}
