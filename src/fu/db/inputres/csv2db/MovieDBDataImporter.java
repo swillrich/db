@@ -25,12 +25,9 @@ public class MovieDBDataImporter extends DBDataImporter {
 		Integer votes = getAs(list.get(4), Integer.class);
 		Integer runtime = getAs(list.get(5).replace(" mins.", ""),
 				Integer.class);
-		String[] directorArr = list.get(6).split("\\|");
-		String[] actorsArr = list.get(7).split("\\|");
-		String[] genreArr = list.get(8).split("\\|");
 
 		try {
-			InsertStat insertMovie = new InsertStat()
+			new InsertStat()
 					.setTable("moviedb.movie")
 					.setColumns("id", "title", "year", "rating", "votes",
 							"runtime")
@@ -39,12 +36,6 @@ public class MovieDBDataImporter extends DBDataImporter {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-//		for (String director : directorArr) {
-//			int sep = director.indexOf(" ");
-//			String firstName = sep ?  
-//			String lastName = "";
-//			new PersonDAO().findActorByFirstAndLastName(firstName, lastName);
-//		}
 	}
 
 	@Override
