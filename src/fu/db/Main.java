@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.sql.Connection;
 
-import fu.db.cmi.CLIUserInteraction;
+import fu.db.cli.CLIUserInteraction;
 import fu.db.connection.DBConnection;
 import fu.db.connection.SQLFileReaderAndExecuter;
 import fu.db.inputres.CSV2DB;
