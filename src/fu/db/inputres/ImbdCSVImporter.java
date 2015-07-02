@@ -7,6 +7,10 @@ import java.nio.file.Path;
 import fu.db.Log;
 import fu.db.inputres.csv.CSVImport;
 
+/**
+ * This class extends CSVImporter and adds attributes respecting IMDB, e.g. titles.
+ * 
+ */
 public class ImbdCSVImporter extends CSVImport {
 
 	private String[] titles = new String[] { "imdbID", "name", "year",
